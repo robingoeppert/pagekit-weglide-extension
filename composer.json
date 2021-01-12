@@ -1,0 +1,13 @@
+{
+    "name": "robingoeppert/weglide",
+    "version": "0.1.0",
+    "type": "pagekit-extension",
+    "title": "Weglide Widgets",
+    "description": "Some Widgets to display data from weglide.org",
+    "authors": [
+        {
+            "name": "Robin Göppert",
+            "email": "robin.goeppert@gmail.com"
+        }
+    ]
+}
