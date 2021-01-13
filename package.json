@@ -1,0 +1,29 @@
+{
+  "name": "pagekit-weglide-extension",
+  "version": "0.1.0",
+  "description": "Pagekit extension with widgets for data from weglide.org",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robingoeppert/pagekit-weglide-extension.git"
+  },
+  "keywords": [
+    "pagekit",
+    "extension",
+    "widgets",
+    "weglide"
+  ],
+  "author": "Robin Göppert",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/robingoeppert/pagekit-weglide-extension/issues"
+  },
+  "homepage": "https://github.com/robingoeppert/pagekit-weglide-extension#readme",
+  "devDependencies": {
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1"
+  }
+}
