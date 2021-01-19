@@ -22,7 +22,7 @@ return [
      * Remember to escape backslashes with a second backslash.
      */
     'autoload' => [
-    
+        'Robingoeppert\\Weglide\\' => 'src'
     ],
 
     /*
@@ -80,7 +80,10 @@ return [
     ],
 
     'routes' => [
-        
+        '@weglide/flights' => [
+            'path' => '/weglide/flights',
+            'controller' => 'Robingoeppert\\Weglide\\Controller\\FlightsController'
+        ]
     ],
 
     'menu' => [
