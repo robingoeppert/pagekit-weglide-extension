@@ -7,7 +7,7 @@ return [
 
     'events' => [
         'view.scripts' => function($event, $scripts) use($app) {
-            $scripts->register('widget-flights', 'robingoeppert/weglide:app/bundle/widget-flights.js', ['~widgets']);
+            $scripts->register('robingoeppert-weglide-flights', 'robingoeppert/weglide:app/bundle/widget-flights.js', ['~widgets']);
         }
     ],
 

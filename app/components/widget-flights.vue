@@ -1,5 +1,7 @@
 <template>
     <div class="uk-grid pk-grid-large pk-width-sidebar-large" data-uk-grid-margin>
+        <p>Hellooooo</p>
+
         <div class="pk-width-content uk-form-horizontal">
 
             <div class="uk-form-row">
@@ -16,7 +18,7 @@
                 <label for="form-queryparams" class="uk-form-label">{{ 'Query Parameters' | trans }}</label>
 
                 <div class="uk-form-controls">
-                    <input id="form-queryparams" class="uk-form-width-large" type="text" name="title" v-model="widget.data.query_params">
+                    <input id="form-queryparams" class="uk-form-width-large" type="text" name="form-queryparams" v-model="widget.data.query_params">
                 </div>
             </div>
         </div>
@@ -33,7 +35,7 @@
             label: 'Settings'
         },
 
-        replace: true,
+        replace: false,
 
         props: ['widget', 'config', 'form'],
 
@@ -42,5 +44,5 @@
         }
     };
 
-    window.Widgets.components['weglide-flights:settings'] = module.exports.default;
+    window.Widgets.components['robingoeppert-weglide-flights:settings'] = module.exports.default;
 </script>
