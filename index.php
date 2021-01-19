@@ -3,7 +3,7 @@
 use Pagekit\Application;
 
 return [
-    'name' => 'weglide',
+    'name' => 'robingoeppert/weglide',
 
     'type' => 'extension',
 
@@ -88,7 +88,7 @@ return [
     ],
 
     'resources' => [
-        
+        'robingoeppert/weglide:' => ''
     ]
 ];
 

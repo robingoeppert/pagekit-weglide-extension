@@ -1,5 +1,6 @@
 {
     "name": "robingoeppert/weglide",
+    "module": "robingoeppert/weglide",
     "version": "0.1.0",
     "type": "pagekit-extension",
     "title": "Weglide Widgets",

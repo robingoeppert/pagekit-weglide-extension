@@ -1,19 +1,18 @@
 <?php
 
 return [
-    'name' => 'weglide/widget-flights',
+    'name' => 'robingoeppert/weglide/widget-flights',
 
-    'label' => 'Weglide Flights Widget',
+    'label' => 'Weglide Flights',
 
-    /*
     'events' => [
         'view.scripts' => function($event, $scripts) use($app) {
-            $scripts->register('widget-weglide-flights', 'weglide:js/widget-flights.js', ['~widgets']);
+            $scripts->register('widget-flights', 'robingoeppert/weglide:app/bundle/widget-flights.js', ['~widgets']);
         }
-    ],*/
+    ],
 
     'render' => function($widget) use($app) {
-        return $app->view('weglide/widget-flights.php');
+        return $app->view('robingoeppert/weglide/widget-flights.php');
     }
 ];
 
