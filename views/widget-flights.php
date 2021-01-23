@@ -1,1 +1,7 @@
-<p>Sample Flights Widget Output</p>
+<?php
+    $view->script('flights', 'robingoeppert/weglide:js/flights.js', ['jquery', 'uikit']);
+?>
+
+<ul id="weglide-flights">
+
+</ul>
