@@ -82,7 +82,10 @@ return [
     ],
 
     'routes' => [
-        
+        '@weglide/flights' => [
+            'path' => '/weglide/flights',
+            'controller' => 'Robingoeppert\\Weglide\\Controller\\FlightsController'
+        ]
     ],
 
     'menu' => [
