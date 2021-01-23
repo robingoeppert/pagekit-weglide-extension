@@ -2,6 +2,4 @@
     $view->script('flights', 'robingoeppert/weglide:js/flights.js', ['jquery', 'uikit']);
 ?>
 
-<ul id="weglide-flights">
-
-</ul>
+<table id="weglide-flights" class="uk-table"><tbody></tbody></table>

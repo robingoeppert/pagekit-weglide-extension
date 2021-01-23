@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
             var userName = flight.user.name;
             var distance = Math.round(flight.contest.distance);
 
-            $('#weglide-flights').append(`<li>${distance} km, ${userName}</li>`);
+            $('#weglide-flights tbody').append(`<tr><td>${distance} km</td><td>${userName}</td></tr>`);
         });
     };
     
