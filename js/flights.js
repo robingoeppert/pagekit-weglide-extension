@@ -15,7 +15,13 @@ function loadFlightsData(widgetElement) {
     xmlHTTP.onload = function (e) {
         var flightsData = this.response;
 
-        $(widgetElement).append('<table class="uk-table"><tbody></tbody></table>');
+        $(widgetElement).append(`
+            <table class="uk-table">
+                <caption style="caption-side: bottom;">Data by <a href="https://weglide.org" target="_blank">WeGlide</a></caption>
+                <tbody></tbody>
+            </table>
+        `);
+
         var tableBody = $(widgetElement).find('table tbody');
 
         flightsData.forEach(flight => {
@@ -23,12 +29,13 @@ function loadFlightsData(widgetElement) {
             var userName = flight.user.name;
             var distance = Math.round(flight.contest.distance);
 
-            $(tableBody)
-                .append(`<tr>
+            $(tableBody).append(`
+                <tr>
                     <td>${distance} km</td>
                     <td>${userName}</td>
                     <td><a href="https://beta.weglide.org/flights/${flightId}" target="_blank" class="uk-icon-plane"></a></td>
-                </tr>`);
+                </tr>
+            `);
         });
     };
 
