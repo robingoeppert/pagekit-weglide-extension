@@ -2,4 +2,4 @@
     $view->script('flights', 'robingoeppert/weglide:js/flights.js', ['jquery', 'uikit']);
 ?>
 
-<table id="weglide-flights" class="uk-table"><tbody></tbody></table>
+<div data-weglide-flights-widget onload="loadFlightsData(this)"></div>

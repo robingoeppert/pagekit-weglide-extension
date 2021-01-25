@@ -1,4 +1,9 @@
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
+    $('div[data-weglide-flights-widget][onload]').trigger('onload');
+});
+
+
+function loadFlightsData(widgetElement) {
     var baseUrl = window.$pagekit.url;
     var flightsUrl = baseUrl + '/weglide/flights';
 
@@ -10,12 +15,15 @@ window.addEventListener("load", function () {
     xmlHTTP.onload = function (e) {
         var flightsData = this.response;
 
+        $(widgetElement).append('<table class="uk-table"><tbody></tbody></table>');
+        var tableBody = $(widgetElement).find('table tbody');
+
         flightsData.forEach(flight => {
             var flightId = flight.id;
             var userName = flight.user.name;
             var distance = Math.round(flight.contest.distance);
 
-            $('#weglide-flights tbody')
+            $(tableBody)
                 .append(`<tr>
                     <td>${distance} km</td>
                     <td>${userName}</td>
@@ -25,4 +33,4 @@ window.addEventListener("load", function () {
     };
 
     xmlHTTP.send();
-});
+};
