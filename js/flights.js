@@ -15,29 +15,35 @@ function loadFlightsData(widgetElement) {
     xmlHTTP.onload = function (e) {
         var flightsData = this.response;
 
-        $(widgetElement).append(`
-            <table class="uk-table">
-                <caption style="caption-side: bottom;">Data by <a href="https://weglide.org" target="_blank">WeGlide</a></caption>
-                <tbody></tbody>
-            </table>
-        `);
-
-        var tableBody = $(widgetElement).find('table tbody');
-
-        flightsData.forEach(flight => {
-            var flightId = flight.id;
-            var userName = flight.user.name;
-            var distance = Math.round(flight.contest.distance);
-
-            $(tableBody).append(`
-                <tr>
-                    <td>${distance} km</td>
-                    <td>${userName}</td>
-                    <td><a href="https://beta.weglide.org/flights/${flightId}" target="_blank" class="uk-icon-plane"></a></td>
-                </tr>
-            `);
-        });
+        $(widgetElement).append(createFlightsDataTable(flightsData));
     };
 
     xmlHTTP.send();
+};
+
+function createFlightsDataTable(flightsData) {
+    var table = $(`
+        <table class="uk-table">
+            <caption style="caption-side: bottom;">Data by <a href="https://weglide.org" target="_blank">WeGlide</a></caption>
+            <tbody></tbody>
+        </table>
+    `);
+
+    var tableBody = table.find('tbody');
+
+    flightsData.forEach(flight => {
+        var flightId = flight.id;
+        var userName = flight.user.name;
+        var distance = Math.round(flight.contest.distance);
+
+        $(tableBody).append(`
+            <tr>
+                <td>${distance} km</td>
+                <td>${userName}</td>
+                <td><a href="https://beta.weglide.org/flights/${flightId}" target="_blank" class="uk-icon-plane"></a></td>
+            </tr>
+        `);
+    });
+
+    return table;
 };
