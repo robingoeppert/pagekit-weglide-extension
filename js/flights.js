@@ -15,6 +15,9 @@ function loadFlightsData(widgetElement) {
     xmlHTTP.onload = function (e) {
         var flightsData = this.response;
 
+        // Removes spinner
+        $(widgetElement).empty();
+
         $(widgetElement).append(createFlightsDataTable(flightsData));
     };
 
