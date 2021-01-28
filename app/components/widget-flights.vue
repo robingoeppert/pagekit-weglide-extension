@@ -1,7 +1,5 @@
 <template>
     <div class="uk-grid pk-grid-large pk-width-sidebar-large" data-uk-grid-margin>
-        <p>Hellooooo</p>
-
         <div class="pk-width-content uk-form-horizontal">
 
             <div class="uk-form-row">
@@ -30,7 +28,7 @@
 </template>
 
 <script>
-    module.exports.default = {
+    module.exports = {
         section: {
             label: 'Settings'
         },
@@ -44,5 +42,5 @@
         }
     };
 
-    window.Widgets.components['robingoeppert-weglide-flights:settings'] = module.exports.default;
+    window.Widgets.components['robingoeppert-weglide-widget-flights:settings'] = module.exports;
 </script>
