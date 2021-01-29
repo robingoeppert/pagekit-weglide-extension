@@ -1,4 +1,12 @@
-# Pagekit Weglide Extension
+# Pagekit Extension for Weglide
+The widgets of this extension visualize data from [weglide.org](https://www.weglide.org), a modern platform for scoring and analyzing glider cross-country flights.
+
+Note that this extension simply makes use of their API and is not an official product of weglide.org
+
+## Flights Widget
+Simple list of flights with flown distance, the pilot's name and a link to the flight details page on weglide.org
+
+![sample picture of Flights Widget](doc/flights-widget.png "Flight Widget")
 
 ## Development
 ### Prerequisites
