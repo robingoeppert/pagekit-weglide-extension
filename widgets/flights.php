@@ -12,7 +12,7 @@ return [
     ],
 
     'render' => function($widget) use($app) {
-        return $app->view('robingoeppert/weglide/widget-flights.php');
+        return $app->view('robingoeppert/weglide/widget-flights.php', ['query' => $widget->get('query_params')]);
     }
 ];
 

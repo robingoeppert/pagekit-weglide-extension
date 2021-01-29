@@ -3,9 +3,9 @@ window.addEventListener('load', function () {
 });
 
 
-function loadFlightsData(widgetElement) {
+function loadFlightsData(widgetElement, queryParams) {
     var baseUrl = window.$pagekit.url;
-    var flightsUrl = baseUrl + '/weglide/flights';
+    var flightsUrl = baseUrl + '/weglide/flights?' + queryParams;
 
     var xmlHTTP = new XMLHttpRequest();
 

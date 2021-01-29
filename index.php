@@ -62,7 +62,7 @@ return [
      */
     'config' => [
         'flights' => [
-            'url' => 'https://api.weglide.org/v1/flight?airport_id_in=156649&order_by=-scoring_date&limit=5'
+            'url' => 'https://api.weglide.org/v1/flight'
         ]
     ],
 
