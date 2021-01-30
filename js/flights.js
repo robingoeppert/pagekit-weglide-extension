@@ -3,9 +3,9 @@ window.addEventListener('load', function () {
 });
 
 
-function loadFlightsData(widgetElement, queryParams) {
+function loadFlightsData(widgetElement, widgetId) {
     var baseUrl = window.$pagekit.url;
-    var flightsUrl = baseUrl + '/weglide/flights?' + queryParams;
+    var flightsUrl = baseUrl + '/weglide/flights?widget_id=' + widgetId;
 
     var xmlHTTP = new XMLHttpRequest();
 
@@ -13,12 +13,14 @@ function loadFlightsData(widgetElement, queryParams) {
     xmlHTTP.responseType = 'json';
 
     xmlHTTP.onload = function (e) {
-        var flightsData = this.response;
+        if (!this.response.error) {
+            var flightsData = this.response.data;
 
-        // Removes spinner
-        $(widgetElement).empty();
+            // Removes spinner
+            $(widgetElement).empty();
 
-        $(widgetElement).append(createFlightsDataTable(flightsData));
+            $(widgetElement).append(createFlightsDataTable(flightsData));
+        }
     };
 
     xmlHTTP.send();
