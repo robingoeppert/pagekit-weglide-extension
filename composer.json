@@ -10,5 +10,8 @@
             "name": "Robin Göppert",
             "email": "robin.goeppert@gmail.com"
         }
-    ]
+    ],
+    "extra": {
+        "icon": "icon.svg"
+    }
 }

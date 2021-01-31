@@ -26,34 +26,14 @@ return [
     ],
 
     /*
-     * Define nodes. A node is similar to a route with the difference
-     * that it can be placed anywhere in the menu structure. The
-     * resulting route is therefore determined on runtime.
-     */
-    'nodes' => [
-
-    ],
-
-    /*
-     * Define menu items for the backend.
-     */
-    'menu' => [
-
-    ],
-
-    /*
      * Define permissions.
      * Will be listed in backend and can then be assigned to certain roles.
      */
     'permissions' => [
-
-    ],
-
-    /*
-     * Link to a views screen from the extensions listing.
-     */
-    'views' => [
-
+        'weglide: edit settings' => [
+			'title' => 'Edit Weglide Settings',
+			'description' => 'Allows to edit settings of the Weglide extension'
+		]
     ],
 
     /*
@@ -73,22 +53,16 @@ return [
         ]
     ],
 
-    /*
-     * Listen to events.
-     */
-    'events' => [
-
-    ],
-
     'widgets' => [
         'widgets/flights.php'
     ],
 
-    'positions' => [
-        
-    ],
-
     'routes' => [
+        '@weglide/settings' => [
+            'path' => '/weglide/settings',
+            'controller' => 'Robingoeppert\\Weglide\\Controller\\SettingsController'
+        ],
+
         '@weglide/flights' => [
             'path' => '/weglide/flights',
             'controller' => 'Robingoeppert\\Weglide\\Controller\\FlightsController'
@@ -96,8 +70,21 @@ return [
     ],
 
     'menu' => [
-        
+        'weglide' => [
+			'label' => 'Weglide',
+			'icon' => 'robingoeppert/weglide:icon.svg',
+			'url' => '@weglide/settings',
+			'access' => 'weglide: edit settings'
+		],
+		'webcam: settings' => [
+            'label' => 'Settings',
+            'parent' => 'weglide',
+            'url' => '@weglide/settings',
+            'access' => 'weglide: edit settings'
+        ]
     ],
+
+    'settings' => '@weglide/settings',
 
     'resources' => [
         'robingoeppert/weglide:' => ''

@@ -1,7 +1,8 @@
 module.exports = [
     {
         entry: {
-            "widget-flights": "./app/components/widget-flights.vue"
+            "widget-flights": "./app/components/widget-flights.vue",
+            "settings": "./app/views/settings"
         },
         output: {
             filename: "./app/bundle/[name].js"
