@@ -12,7 +12,15 @@ return [
     ],
 
     'render' => function($widget) use($app) {
-        return $app->view('robingoeppert/weglide/widget-flights.php', ['widget_id' => $widget->id]);
+        $config = $app->module('robingoeppert/weglide')->config;
+        $flight_details_url = $config['connection']['ui']['base_url'] . $config['connection']['ui']['flight_details'];
+        $credits_url = $config['connection']['ui']['base_url'];
+
+        return $app->view('robingoeppert/weglide/widget-flights.php', [
+            'widget_id' => $widget->id,
+            'flight_details_url' => $flight_details_url,
+            'credits_url' => $credits_url
+        ]);
     }
 ];
 

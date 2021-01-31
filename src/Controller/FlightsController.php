@@ -31,12 +31,15 @@ class FlightsController {
 
         $config = App::module('robingoeppert/weglide')->config;
         
-        $base_url = $config['flights']['url'];
-        $base_url = rtrim($base_url, '/');
-        $base_url = rtrim($base_url, '?');
+        $base_url = $config['connection']['api']['base_url'];
         $base_url = rtrim($base_url, '/');
 
-        $url = $base_url . '?' . $query;
+        $request_path = $config['connection']['api']['flights_request'];
+        if (!substr($request_path, 0, 1) === '/') {
+            $request_path = '/' . $request_path;
+        }
+
+        $url = $base_url . $request_path . '?' . $query;
 	
 		$process = curl_init($url);	
 		curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);

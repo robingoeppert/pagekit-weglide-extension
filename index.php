@@ -61,8 +61,15 @@ return [
      * Can be overwritten by changed config during runtime.
      */
     'config' => [
-        'flights' => [
-            'url' => 'https://api.weglide.org/v1/flight'
+        'connection' => [
+            'api' => [
+                'base_url' => 'https://api.weglide.org',
+                'flights_request' => '/v1/flight'
+            ],
+            'ui' => [
+                'base_url' => 'https://beta.weglide.org',
+                'flight_details' => '/flights'
+            ]
         ]
     ],
 

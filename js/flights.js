@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
 });
 
 
-function loadFlightsData(widgetElement, widgetId) {
+function loadFlightsWidget(widgetElement, widgetId, flightDetailsUrl, creditsUrl) {
     var baseUrl = window.$pagekit.url;
     var flightsUrl = baseUrl + '/weglide/flights?widget_id=' + widgetId;
 
@@ -19,17 +19,17 @@ function loadFlightsData(widgetElement, widgetId) {
             // Removes spinner
             $(widgetElement).empty();
 
-            $(widgetElement).append(createFlightsDataTable(flightsData));
+            $(widgetElement).append(createFlightsDataTable(flightsData, flightDetailsUrl, creditsUrl));
         }
     };
 
     xmlHTTP.send();
 };
 
-function createFlightsDataTable(flightsData) {
+function createFlightsDataTable(flightsData, flightDetailsUrl, creditsUrl) {
     var table = $(`
         <table class="uk-table">
-            <caption style="caption-side: bottom;">Data by <a href="https://weglide.org" target="_blank">WeGlide</a></caption>
+            <caption style="caption-side: bottom;">Data by <a href="${creditsUrl}" target="_blank">WeGlide</a></caption>
             <tbody></tbody>
         </table>
     `);
@@ -45,7 +45,7 @@ function createFlightsDataTable(flightsData) {
             <tr>
                 <td>${distance} km</td>
                 <td>${userName}</td>
-                <td><a href="https://beta.weglide.org/flights/${flightId}" target="_blank" class="uk-icon-plane"></a></td>
+                <td><a href="${flightDetailsUrl}/${flightId}" target="_blank" class="uk-icon-plane"></a></td>
             </tr>
         `);
     });
