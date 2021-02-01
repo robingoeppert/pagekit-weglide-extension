@@ -16,7 +16,8 @@
                 <label for="form-queryparams" class="uk-form-label">{{ 'Query Parameters' | trans }}</label>
 
                 <div class="uk-form-controls">
-                    <input id="form-queryparams" class="uk-form-width-large" type="text" name="form-queryparams" v-model="widget.data.query_params">
+                    <input id="form-queryparams" class="uk-form-width-large" type="text" name="form-queryparams" placeholder="airport_id_in=156649&amp;limit=5" v-model="widget.data.query_params">
+                    <a href="https://api.weglide.org/redoc#operation/get_flightlist_v1_flight_get" target="_blank" class="uk-icon-question-circle" data-uk-tooltip="{pos:'bottom'}" title="API Documentation"></a>
                 </div>
             </div>
         </div>
