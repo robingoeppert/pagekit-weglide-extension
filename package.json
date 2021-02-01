@@ -1,6 +1,6 @@
 {
   "name": "pagekit-weglide-extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pagekit extension with widgets for data from weglide.org",
   "main": "webpack.config.js",
   "scripts": {
