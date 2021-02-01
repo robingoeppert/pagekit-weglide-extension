@@ -7,23 +7,17 @@ function loadFlightsWidget(widgetElement, widgetId, flightDetailsUrl, creditsUrl
     var baseUrl = window.$pagekit.url;
     var flightsUrl = baseUrl + '/weglide/flights?widget_id=' + widgetId;
 
-    var xmlHTTP = new XMLHttpRequest();
+    $.ajax(flightsUrl, { method: 'GET' })
+        .done(function(response) {
+            if (!response.error) {
+                var flightsData = response.data;
 
-    xmlHTTP.open('GET', flightsUrl, true);
-    xmlHTTP.responseType = 'json';
+                // Removes spinner
+                $(widgetElement).empty();
 
-    xmlHTTP.onload = function (e) {
-        if (!this.response.error) {
-            var flightsData = this.response.data;
-
-            // Removes spinner
-            $(widgetElement).empty();
-
-            $(widgetElement).append(createFlightsDataTable(flightsData, flightDetailsUrl, creditsUrl));
-        }
-    };
-
-    xmlHTTP.send();
+                $(widgetElement).append(createFlightsDataTable(flightsData, flightDetailsUrl, creditsUrl));
+            }
+        });
 };
 
 function createFlightsDataTable(flightsData, flightDetailsUrl, creditsUrl) {
